@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dinosaur Trivia</title>
+    <title>Bird Trivia</title>
     <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
@@ -13,7 +13,53 @@
 </head>
 
 <body>
-	<script type="text/javascript" src="assets/javascript/game.js">
+ <div class="jumbotron"><h1>Bird Trivia!</h1></div>
+    <br>
+    <br>
+    <div><button class="btn btn-primary btn-lg" id="startGame">Get Started</button></div>
+
+    <div id="restartGame">
+        <button class="col-md-3 col-md-push-5 text-center btn btn-custom" id="hideRestart">Restart?</button>
+    </div>
+
+      
+    <div class="questions-container" id="hiddenDiv">
+        <div class="row">
+        	<div class="well well-lg" id="countdown"></div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Wins:</h3>
+                </div>
+                <div class="panel-body text-center">
+                    <h1 id="win-counter"></h1>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Current Word:</h3>
+                </div>
+                <div class="panel-body text-center">
+                    <h1 id="current-word"></h1></div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Number of Guesses Remaining:</h3>
+                </div>
+                <div class="panel-body text-center">
+                    <h1 id="guess-counter"></h1>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Letters Already Guessed:</h3>
+                </div>
+                <div class="panel-body text-center">
+                    <h1 id="letters-guessed"></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+	<script type="text/javascript" src="assets/javascript/app.js">
     </script>
 </body>
 

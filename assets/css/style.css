@@ -1,0 +1,11 @@
+#hiddenDiv {
+    display: none;
+}
+
+#startGame {
+	display: block;
+}
+
+#hideRestart {
+	display: none;
+}
