@@ -17,83 +17,82 @@
 // * On the final screen, show the number of correct answers, incorrect
 // answers, and an option to restart the game (without reloading the page).
 
-// Trivia Questions:
-
-// What words are typically used to describe the song of the Easter Towhee?
-// Correct: "Drink your tea!"
-// "Peter! Peter! Peter!"
-// "Tea kettle! Tea kettle! Tea kettle!"
-// "Teacher! Teacher! Teacher!"
-
-// What name is typically used to describe the song of the Tufted Titmouse?
-// Correct: "Peter! Peter! Peter!"
-// "Tea kettle! Tea kettle! Tea kettle!"
-// "Allen! Allen! Allen!"
-// "Steve! Steve! Steve!"
-
-// What is the song of the Black and White Warbler frequently compared to?
-// Correct: the sound of a squeaky wheel
-// a foghorn
-// the old Nextel "push-to-talk" chime
-// a trainwhistle
-
-// What word(s) is typically used to describe the most well-known call of the Blue Jay?
-// Correct: Thief
-// Popsicle
-// Dinosaur
-// Tea Kettle
-
-// Which mimic usually repeats each "phrase" of its song 3 times?
-// Correct: Northern Mockingbird
-// Three-Toed Sloth
-// Brown Thrasher
-// Catbird
-
-// Which mimic usually repeats each "phrase" of its song 2 times?
-// Correct: Brown Thrasher
-// Northern Mockingbird
-// Catbird
-// 2-lined salamander
-
-// Which bird of prey was previously known as the Marsh Hawk?
-// Correct: Northern Harrier
-// Red-Tailed Hawk
-// Red-Shouldered Hawk
-// Bald Eagle
-
-// What words are typically used to describe the song of the Carolina Wren?
-// Correct: "Tea kettle! Tea kettle! Tea kettle!"
-// "Peter! Peter! Peter!"
-// "Drink your tea!"
-// "Teacher! Teacher! Teacher!"
-
-// Which southeastern bird is sometimes referred to as a "snow bird?"
-// Correct: Dark-Eyed Junco
-// Red-Tailed Hawk
-// Northern Mockingbird
-// Carolina Wren
-
-// Which bird's song is often compared to the phrase "Oh sweet Canada?"
-// Correct: White-Throated Sparrow
-// Northern Mockingbird
-// Carolina Wren
-// Eastern Towhee
-
-// The Carolina Chickadee is a common feeder bird that is easily distinguished by its...
-// Correct: black cap and throat
-// golden hood
-// red throat
-// white wing bars
-
-// This is the state bird of North Carolina.
-// Correct: Northern Cardinal
-// Red-Tailed Hawk
-// White-Throated Sparrow
-// Carolina Chicadee
-
 
 $(document).ready(function() {
 
+	var questions = 
+      [
+        {
+        	question: "What words are typically used to describe the song of the Easter Towhee?",
+        	choices: ["Drink your tea!", "Peter! Peter! Peter!", "Tea kettle!", "Teacher! Teacher!"],
+        	answer: 0
+        },
+        
+        {
+        	question: "What name is typically used to describe the song of the Tufted Titmouse?",
+        	choices: ["Allen! Allen! Allen!", "Steve! Steve! Steve!", "Tea kettle!", "Peter! Peter! Peter!"],
+        	answer: 3
+        }
+
+        {	question: "What is the song of the Black and White Warbler frequently compared to?",
+        	choices: ["a trainwhistle", "the old Nextel push-to-talk chime", "the sound of a squeaky wheel", "a foghorn"],
+        	answer: 2
+        }
+
+        {
+        	question: "What word(s) is typically used to describe the most well-known call of the Blue Jay?",
+        	choices: ["Popsicle", "Thief", "Dinosaur", "Tea Kettle"],
+        	answer: 1
+        }
+
+        {
+        	question: "Which mimic usually repeats each phrase of its song 3 times?",
+        	choices: ["Three-Toed Sloth", "Brown Thrasher", "Northern Mockingbird", "Catbird"],
+        	answer: 2
+        }
+
+        {
+        	question: "Which bird of prey was previously known as the Marsh Hawk?",
+        	choices: ["Bald Eagle", "Northern Harrier", "Red-Tailed Hawk", "Red-Shouldered Hawk"],
+        	answer: 1
+        }
+
+        {
+        	question: "Which mimic usually repeats each phrase of its song 2 times?",
+        	choices: ["Brown Thrasher", "Northern Mockingbird", "Catbird", "Two-Lined Salamander"],
+        	answer: 0
+        }
+
+        {
+        	question: "What words are typically used to describe the song of the Carolina Wren?",
+        	choices: ["Peter! Peter!", "Drink your tea!", "Tea kettle! Tea kettle! Tea kettle!", "Teacher! Teacher! Teacher!"],
+        	answer: 2
+        }
+
+        {
+        	question: "Which southeastern bird is sometimes referred to as a snow bird?",
+        	choices: ["Carolina Wren", "Red-Tailed Hawk", "Northern Mockingbird", "Dark-Eyed Junco"],
+        	answer: 3
+        }
+
+        {
+        	question: "Which bird's song is often compared to the phrase '"'Oh sweet Canada?'"'",
+        	choices: ["White-Throated Sparrow", "Northern Mockingbird", "Carolina Wren", "Eastern Towhee"],
+        	answer: 0
+        }
+
+        {
+        	question: "The Carolina Chickadee is a common feeder bird that is easily distinguished by its...",
+        	choices: ["white wing bars", "golden hood", "black cap and throat", "red throat"],
+        	answer: 2
+        }
+
+        {
+        	question: "This is the state bird of North Carolina.",
+        	choices: ["Carolina Chicadee", "Red-Tailed Hawk", "White-Throated Sparrow", "Northern Cardinal"],
+        	answer: 3
+        } 
+      ];
 
 
     //  Set our number counter to 20.
@@ -120,7 +119,7 @@ $(document).ready(function() {
       countdown--;
 
       //  Show the number in the #show-number tag.
-      $("#countdown").html("<h2>" + countdown + "</h2>");
+      $("#countdown").text(countdown);
 
       //  Once number hits zero, run stop function.
       if (countdown === 0) {
@@ -133,13 +132,17 @@ $(document).ready(function() {
       clearInterval(intervalId);
     }
 
-    function displayDiv() {
-    	document.getElementById("hiddenDiv").style.display = "block";
-    }
+    // function displayDiv() {
+    // 	document.getElementById("hiddenDiv").style.display = "block";
+    // }
 
-    function hideStart() {
-    	document.getElementById("startGame").style.display = "none";
+    function displayDiv() {
+    	$("#hiddenDiv").css("display", "block");
     }
+    function hideStart() {
+    	$("#startGame").css("display", "none");  	
+    }
+	// document.getElementById("startGame").style.display = "none";
 
     // After clicking Start button, display div with question
     $("#startGame").on("click", displayDiv);
@@ -147,6 +150,8 @@ $(document).ready(function() {
     $("#startGame").on("click", hideStart);
 
 	runtimer();
+
+
 
 
 

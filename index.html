@@ -13,53 +13,69 @@
 </head>
 
 <body>
- <div class="jumbotron"><h1>Bird Trivia!</h1></div>
+    <div class="jumbotron">
+        <h1>Bird Trivia!</h1></div>
     <br>
     <br>
-    <div><button class="btn btn-primary btn-lg" id="startGame">Get Started</button></div>
-
+    <div>
+        <button class="btn btn-primary btn-lg" id="startGame">Get Started</button>
+    </div>
     <div id="restartGame">
         <button class="col-md-3 col-md-push-5 text-center btn btn-custom" id="hideRestart">Restart?</button>
     </div>
-
-      
+    <div>
+        
+    </div>
     <div class="questions-container" id="hiddenDiv">
         <div class="row">
-        	<div class="well well-lg" id="countdown"></div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Wins:</h3>
-                </div>
-                <div class="panel-body text-center">
-                    <h1 id="win-counter"></h1>
-                </div>
+            <div class="well well-lg" id="countdown"></div>
+            <div>
+            	<ul class="list-group">
+                	<li class="list-group-item">test</li>
+                	<li class="list-group-item">test</li>
+               		<li class="list-group-item">test</li>
+                	<li class="list-group-item">test</li>
+                	<li class="list-group-item">test</li>
+            	</ul>
+        	</div>
+        </div>
+    </div>
+
+
+    <div id="results-panel">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Wins:</h3>
             </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Current Word:</h3>
-                </div>
-                <div class="panel-body text-center">
-                    <h1 id="current-word"></h1></div>
+            <div class="panel-body text-center">
+                <h1 id="win-counter"></h1>
             </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Number of Guesses Remaining:</h3>
-                </div>
-                <div class="panel-body text-center">
-                    <h1 id="guess-counter"></h1>
-                </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Current Word:</h3>
             </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Letters Already Guessed:</h3>
-                </div>
-                <div class="panel-body text-center">
-                    <h1 id="letters-guessed"></h1>
-                </div>
+            <div class="panel-body text-center">
+                <h1 id="current-word"></h1></div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Number of Guesses Remaining:</h3>
+            </div>
+            <div class="panel-body text-center">
+                <h1 id="guess-counter"></h1>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Letters Already Guessed:</h3>
+            </div>
+            <div class="panel-body text-center">
+                <h1 id="letters-guessed"></h1>
             </div>
         </div>
     </div>
-	<script type="text/javascript" src="assets/javascript/app.js">
+    <script type="text/javascript" src="assets/javascript/app.js">
     </script>
 </body>
 

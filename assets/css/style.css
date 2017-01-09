@@ -9,3 +9,7 @@
 #hideRestart {
 	display: none;
 }
+
+#results-panel {
+	display: none;
+}
