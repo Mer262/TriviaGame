@@ -13,3 +13,7 @@
 #results-panel {
 	display: none;
 }
+
+#the-question {
+	font-weight: bold;
+}
