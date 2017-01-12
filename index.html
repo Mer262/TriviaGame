@@ -17,57 +17,58 @@
         <h1>Bird Trivia!</h1></div>
     <br>
     <br>
-    <div>
-        <button class="btn btn-primary btn-lg" id="startGame">Get Started</button>
-    </div>
-    <div>
-    
-    <div class="questions-container" id="hiddenDiv">
-        <div class="row">
-            <div class="well well-lg" id="countdown"></div>
-            <div>
-                <ul class="list-group">
-                    <li class="list-group-item" id="the-question">test</li>
-                    <li class="list-group-item choice" id="option-0">test</li>
-                    <li class="list-group-item choice" id="option-1">test</li>
-                    <li class="list-group-item choice" id="option-2">test</li>
-                    <li class="list-group-item choice" id="option-3">test</li>
-                </ul>
-            </div>
-            <div id="response"></div>
-            <div id="birdie"><img></div>
+    <div class="container">
+        <div>
+            <button class="btn btn-primary btn-lg" id="startGame">Get Started</button>
         </div>
-    </div>
-    <div id="results-panel">
-        <div class="well well-lg">
-            <h1>Here's how you did...</h1></div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Correct Answers:</h3>
+        <div>
+            <div class="questions-container" id="hiddenDiv">
+                <div class="row">
+                    <div class="well well-lg" id="countdown"></div>
+                    <div>
+                        <ul class="list-group">
+                            <li class="list-group-item" id="the-question">test</li>
+                            <li class="list-group-item choice" id="option-0">test</li>
+                            <li class="list-group-item choice" id="option-1">test</li>
+                            <li class="list-group-item choice" id="option-2">test</li>
+                            <li class="list-group-item choice" id="option-3">test</li>
+                        </ul>
+                    </div>
+                    <div id="response"></div>
+                    <div id="birdie"><img></div>
+                </div>
             </div>
-            <div class="panel-body text-left">
-                <h1 id="correct-answers"></h1>
+            <div id="results-panel">
+                <div class="well well-lg">
+                    <h1>Here's how you did...</h1></div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Correct Answers:</h3>
+                    </div>
+                    <div class="panel-body text-left">
+                        <h1 id="correct-answers"></h1>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Incorrect Answers:</h3>
+                    </div>
+                    <div class="panel-body text-left">
+                        <h1 id="incorrect-answers"></h1></div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Unanswered Questions:</h3>
+                    </div>
+                    <div class="panel-body text-left">
+                        <h1 id="unanswered"></h1>
+                    </div>
+                </div>
+            </div>
+            <div id="restartGame">
+                <button class="col-md-3 col-md-push-5 text-center btn btn-primary btn-lg" id="restart">Restart?</button>
             </div>
         </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Incorrect Answers:</h3>
-            </div>
-            <div class="panel-body text-left">
-                <h1 id="incorrect-answers"></h1></div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Unanswered Questions:</h3>
-            </div>
-            <div class="panel-body text-left">
-                <h1 id="unanswered"></h1>
-            </div>
-        </div>
-    </div>
-    <div id="restartGame">
-        <button class="col-md-3 col-md-push-5 text-center btn btn-primary btn-lg" id="restart">Restart?</button>
-    </div>
     </div>
     <script type="text/javascript" src="assets/javascript/appcopy.js">
     </script>
