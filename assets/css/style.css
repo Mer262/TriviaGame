@@ -1,5 +1,19 @@
+.jumbotron {
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
 #hiddenDiv {
     display: none;
+    padding-top: 50px;
+    padding-right: 100px;
+    padding-bottom: 100px;
+    padding-left: 100px;
+}
+}
+
+#btn-lg {
+	margin: 50px;
 }
 
 #startGame {

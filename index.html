@@ -20,62 +20,55 @@
     <div>
         <button class="btn btn-primary btn-lg" id="startGame">Get Started</button>
     </div>
-    <div id="restartGame">
-        <button class="col-md-3 col-md-push-5 text-center btn btn-custom" id="hideRestart">Restart?</button>
-    </div>
     <div>
-        
     </div>
     <div class="questions-container" id="hiddenDiv">
         <div class="row">
             <div class="well well-lg" id="countdown"></div>
             <div>
-            	<ul class="list-group">
-                	<li class="list-group-item" id="the-question">test</li>
-                	<li class="list-group-item choice" id="option-0">test</li>
-               		<li class="list-group-item choice" id="option-1">test</li>
-                	<li class="list-group-item choice" id="option-2">test</li>
-                	<li class="list-group-item choice" id="option-3">test</li>
-            	</ul>
-        	</div>
+                <ul class="list-group">
+                    <li class="list-group-item" id="the-question">test</li>
+                    <li class="list-group-item choice" id="option-0">test</li>
+                    <li class="list-group-item choice" id="option-1">test</li>
+                    <li class="list-group-item choice" id="option-2">test</li>
+                    <li class="list-group-item choice" id="option-3">test</li>
+                </ul>
+            </div>
+            <div id="response"></div>
+            <div id="birdie"><img></div>
         </div>
     </div>
-
-
     <div id="results-panel">
+        <div class="well well-lg">
+            <h1>Here's how you did...</h1></div>
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">Wins:</h3>
+                <h3 class="panel-title">Correct Answers:</h3>
             </div>
             <div class="panel-body text-center">
-                <h1 id="win-counter"></h1>
+                <h1 id="correct-answers"></h1>
             </div>
         </div>
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">Current Word:</h3>
+                <h3 class="panel-title">Incorrect Answers:</h3>
             </div>
             <div class="panel-body text-center">
-                <h1 id="current-word"></h1></div>
+                <h1 id="incorrect-answers"></h1></div>
         </div>
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">Number of Guesses Remaining:</h3>
+                <h3 class="panel-title">Unanswered Questions:</h3>
             </div>
             <div class="panel-body text-center">
-                <h1 id="guess-counter"></h1>
+                <h1 id="unanswered"></h1>
             </div>
         </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Letters Already Guessed:</h3>
-            </div>
-            <div class="panel-body text-center">
-                <h1 id="letters-guessed"></h1>
-            </div>
+        <div id="restartGame">
+            <button class="col-md-3 col-md-push-5 text-center btn btn-custom" id="hideRestart">Restart?</button>
         </div>
     </div>
-    <script type="text/javascript" src="assets/javascript/app.js">
+    <script type="text/javascript" src="assets/javascript/appcopy.js">
     </script>
 </body>
 
