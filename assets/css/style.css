@@ -1,5 +1,10 @@
+body {
+	font-family: 'Catamaran', sans-serif;
+}
+
 .jumbotron {
 	padding-bottom: 0;
+	padding-right: 30px; 
 	margin-bottom: 0;
 }
 
@@ -14,13 +19,14 @@
 
 #btn-lg {
 	margin: 50px;
+	padding: 5px;
 }
 
 #startGame {
 	display: block;
 }
 
-#hideRestart {
+#restart {
 	display: none;
 }
 
@@ -29,5 +35,8 @@
 }
 
 #the-question {
+	margin-top: 20px;
+	margin-bottom: 20px
 	font-weight: bold;
+	size: 26pt;
 }

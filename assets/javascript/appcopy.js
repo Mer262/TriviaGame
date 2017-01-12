@@ -122,29 +122,11 @@ $(document).ready(function() {
     //  the "run" function
     var intervalId;
 
-    // var timerObj = {
-    //  timer: 16,
-    //  timerRunning: false,
-    //  countDownTimer: ''
-    // }
-
-
-
-
-    //starts the timer and checks to see if it's already running
-    //*********************************************
-    // function startTimer(){
-    //      if(timerObj.timerRunning){return;}
-    //          timerObj.countDownTimer = setInterval(decrement, 1000);
-    //          timerObj.timerRunning = true;
-    // }
-    //***********************************************
-    //function to run the interval and check if you're out of time on the current question
-    // function decrement(){
-    //      timerObj.timer--;
-    //      (document.getElementById('currentTime')).innerHTML = timerObj.timer;
-    //    }
-
+    function waitForIt() {
+        var windowTimeout = setTimeout(function() {
+            displayResults();
+        }, 1000);
+    }    
 
     //  The run function sets an interval
     //  that runs the decrement function once a second.
@@ -167,23 +149,16 @@ $(document).ready(function() {
             $("#response").text("Time is up! The correct answer was " + answerDisplay + ".");
             unanswered++;
             console.log("Unanswered questions: " + numberIncorrect)
-                // $("#hiddenDiv").append("<br>")
-                // $("#hiddenDiv").append("<br>")
+            $("#birdie").empty();
             $("#birdie").prepend("<img src=" + '"' + birdPhoto + '"' + " >");
             
             currentQuestion++;
             if (currentQuestion >= questions.length) {
-                displayResults();
+                waitForIt();
             } else {
                 resetTimer();
                 displayDiv();
             }
-
-            //      break out, show results
-            //    endif   
-            //    displayQuestion 
-            //**************
-            //     //  Alert the user that time is up.
         }
     };
 
@@ -197,30 +172,28 @@ $(document).ready(function() {
         countdown = 16;
     };
 
-    // function setDelay(i) {
-    //     setTimeout(function() {
-    //     console.log(i);
-    //     }, 6000);
-    // }
 
-    // function waitForIt() {
-    //     var pause = setTimeout(function() {}, 200000);
-    // }
-
-    //condition to check if out of time
-    //******************************
-    //    if(countdown === 0){
-    //        resetTimer();
-    //        stopTimer();   
-    // }
-    //******************************
     function displayResults() {
         $("#hiddenDiv").css("display", "none");
         $("#results-panel").css("display", "block");
-        $("#correct-answers").text("Correct Answers: " + numberCorrect);
-        $("#incorrect-answers").text("Incorrect Answers:" + numberIncorrect);
-        $("#unanswered").text("Unanswered Questions: " + unanswered);
+        $("#correct-answers").text(numberCorrect);
+        $("#incorrect-answers").text(numberIncorrect);
+        $("#unanswered").text(unanswered);
+        $("#restart").css("display", "block");
     };
+
+    $("#restart").click(function(event) {
+        $("#restart").css("display", "none");
+        $("#results-panel").css("display", "none");
+        currentQuestion = 0;
+        numberCorrect = 0;
+        numberIncorrect = 0;
+        unanswered = 0;
+        $("#birdie").empty();
+        $("#response").empty();
+        displayDiv();
+        resetTimer();
+    });
 
     function clearDisplay() {
         $("#the-question").empty();
@@ -257,24 +230,6 @@ $(document).ready(function() {
         $("#option-3").text(questions[currentQuestion].choices[3]);
         runtimer();
     };
-    //   timeLeftForQuestion = 30
-    //     setInterval(..1000)
-    //       timeLeftForQuestion--
-    //       if (tlfq <= 0)
-    //         // clear interval
-
-    // if (countdown === 0) {
-    //     stopTimer();
-    //     $("#hiddenDiv").empty();
-
-    //     $("#hiddenDiv").text("Time is up! The correct answer was " + answerDisplay + ".");
-    //     numberIncorrect++;
-    //     console.log("numberIncorrect: " + numberIncorrect)
-    //     $("#hiddenDiv").append("<br>")
-    //     $("#hiddenDiv").append("<br>")
-    //     $("#hiddenDiv").append("<img src=" + '"' + birdPhoto + '"' + " >");
-    // }; 
-
 
 
     $(".choice").click(function(event) {
@@ -288,12 +243,12 @@ $(document).ready(function() {
             $("#response").text("That's correct! The answer was " + answerDisplay + ".");
             numberCorrect++;
             console.log("numberCorrect: " + numberCorrect)
-                // $("#hiddenDiv").append("<br>")
-                // $("#hiddenDiv").append("<br>")
+            $("#birdie").empty();
             $("#birdie").prepend("<img src=" + '"' + birdPhoto + '"' + " >");
             currentQuestion++;
             if (currentQuestion >= questions.length) {
-                displayResults();
+                waitForIt();
+                
             } else {
                 resetTimer();
                 displayDiv();
@@ -307,12 +262,11 @@ $(document).ready(function() {
             $("#response").text("Sorry! The correct answer was " + answerDisplay + ".");
             numberIncorrect++;
             console.log("numberIncorrect: " + numberIncorrect)
-                // $("#hiddenDiv").append("<br>")
-                // $("#hiddenDiv").append("<br>")
+            $("#birdie").empty();
             $("#birdie").prepend("<img src=" + '"' + birdPhoto + '"' + " >");
             currentQuestion++;
             if (currentQuestion >= questions.length) {
-                displayResults();
+                waitForIt();
             } else {
                 resetTimer();
                 displayDiv();
@@ -320,10 +274,15 @@ $(document).ready(function() {
         }
     });
 
+    function hideStart() {
+        $("#startGame").css("display", "none");
+    };
 
+    // After clicking Start button, display div with question
+    $("#startGame").on("click", displayDiv);
 
-
-
+    // After clicking Start button, hide Start button
+    $("#startGame").on("click", hideStart);
 
 
 
@@ -345,38 +304,6 @@ $(document).ready(function() {
 //      break out, show results
 //    endif   
 //    displayQuestion 
-
-
-
-
-
-
-
-
-
-
-
-
-// }
-
-function hideStart() {
-    $("#startGame").css("display", "none");
-};
-
-
-
-
-
-// After clicking Start button, display div with question
-$("#startGame").on("click", displayDiv);
-// After clicking Start button, hide Start button
-$("#startGame").on("click", hideStart);
-
-// runtimer();
-
-
-
-
 
 
 });
